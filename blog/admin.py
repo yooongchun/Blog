@@ -7,7 +7,8 @@ from .models import User, Category, TagProfile, Blog, Comment, Message, InfoMsg,
 
 class BlogAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('文章基本信息', {'fields': ['title', 'author', 'password', 'display', 'category', 'image', 'tags']}),
+        ('文章基本信息',
+         {'fields': ['title', 'author', 'password', 'display', 'category', 'render_with_markdown', 'image', 'tags']}),
         ('文章归属专栏', {'fields': ['collection', 'collection_tag']}),
         ('文章内容', {'fields': ['digest', 'content']})]
     list_display = (

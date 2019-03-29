@@ -74,15 +74,13 @@
     <div class="col-sm-9">
         {% if article %}
             <div class="card" style="margin: 0">
-                <div class="card-body article-detail" style="margin: 0;padding: 0">
-                    {% if no_render %}
-                        <div style="margin:0">
-                            {{ article.content|safe }}
-                        </div>
-                    {% else %}
+                <div class="card-body article-content typora-export os-windows" style="margin: 0;padding: 0">
+                    {% if article.render_with_markdown %}
                         <div style="margin:0" id="editormd-box">
                             <textarea id="editormd" style="display:none;">{{ article.content|safe }}</textarea>
                         </div>
+                    {% else %}
+                        {{ article.content|safe }}
                     {% endif %}
                     <div class="article-detail-footer">
                         {% include "blog/article-footer.html" %}

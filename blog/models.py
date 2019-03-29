@@ -108,6 +108,7 @@ class Blog(models.Model):
     collection = models.ForeignKey(CollectionList, on_delete=models.SET_NULL, verbose_name='专栏', null=True, blank=True)
     collection_tag = models.ForeignKey(CollectionTag, on_delete=models.SET_NULL, verbose_name='专栏标签', null=True,
                                        blank=True)
+    render_with_markdown = models.BooleanField(verbose_name='Markdown渲染', default=True)
     digest = models.TextField(verbose_name='摘要', default='', max_length=300)
     content = MDTextField(verbose_name='内容')
 

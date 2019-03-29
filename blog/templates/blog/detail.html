@@ -2,7 +2,7 @@
 {% block title %}
     <title data-value="{{ category }}">{{ article.title }}</title>
 {% endblock %}
-
+{% load static %}
 {% block content %}
     <div class="container" style="width: 90%">
         <div class="card article-header">
@@ -17,15 +17,13 @@
             </div>
         </div>
         <div class="card article-detail" style="margin-top:30px">
-            <div class="card-body article-content" style="margin: 0;padding: 0">
-                {% if no_render %}
-                    <div style="margin:0">
-                        {{ article.content|safe }}
-                    </div>
-                {% else %}
+            <div class="card-body article-content typora-export os-windows" style="margin: 0;padding: 0">
+                {% if article.render_with_markdown %}
                     <div style="margin:0" id="editormd-box">
                         <textarea id="editormd" style="display:none;">{{ article.content|safe }}</textarea>
                     </div>
+                {% else %}
+                    {{ article.content|safe }}
                 {% endif %}
             </div>
             <div class="article-detail-footer">

@@ -20,6 +20,5 @@ urlpatterns = [
     path('collection_list/<str:name>/<int:pk>/', views.Collection.as_view(), name='collection_list'),
     path('photograph/', views.PhotoGraphList.as_view(), name='photograph_list'),
     path('photograph/<str:tag>/', views.PhotoGraphTag.as_view(), name='photograph_tag'),
-    path('auth/', views.Auth.as_view(), name='auth_software'),
 
 ]
