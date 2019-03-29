@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}
+    <title data-value="{{ category }}">{{ title }}</title>
+{% endblock %}
+
+{% block right %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block content %}
+    <div class="container photograph-container" style="width: 100%;">
+        <div class="photograph-box">
+            {% for img in img_list %}
+                <a href="{% url 'blog:photograph_tag' img.tag %}">
+                <span data-value="{{ img.num }}-{{ img.id }}">
+                    <img src="{{ img.url }}" alt="img">
+                    <small>{{ img.description }}</small>
+                </span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
