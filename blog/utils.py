@@ -54,7 +54,7 @@ class PARAS:
         self.MESSAGE_SUCCESS_RETURN_INFO = '留言成功'  # 留言信息提示
         self.UNKNOWN_RETURN_INFO = '不知道该干嘛~'  # 未知信息提示
 
-        self.EMAIL_KEY = 'meeuskiyxnuxdcfj'  # QQ邮箱
+        self.EMAIL_KEY = '*****'  # QQ邮箱秘钥，需要自行到QQ邮箱平台申请
         self.EMAIL_SEND_ACCOUNT = 'yooongchun@foxmail.com'
         self.EMAIL_RECEIVE_ACCOUNT = 'yooongchun@foxmail.com'
         # 关于页面个人信息展示
